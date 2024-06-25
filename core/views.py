@@ -90,7 +90,7 @@ def register (request):
             #MENSAJE
             messages.success(request, 'Usuario Creado Correctamente!')
             #aux['msj'] = 'Noticia Almacenada'
-            user = authenticate(username= formulario.cleaned_data['username'] ,password=formulario.cleaned_data['password1'])
+            user = authenticate(request=request,username= formulario.cleaned_data['username'] ,password=formulario.cleaned_data['password1'])
             login(request, user)
 
             #REDIRECCIONA
