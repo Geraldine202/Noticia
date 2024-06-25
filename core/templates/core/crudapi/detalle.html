@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block principal %}
+
+
+<!-- Hero Section -->
+<section class="hero py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 ">
+                <h1 class="display-4 mb-4">Periodistas</h1>
+                <p class="lead">Aquí puedes ver la lista de periodistas desde el API</p>
+                <a href="{% url 'periodistasadd' %}" class="btn btn-primary py-3 px-5">Agregar Periodista</a>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <img class="img-fluid" src="{% static 'core/img/news_logo.png' %}" alt="Fondo">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+ 
+
+{% endblock %}

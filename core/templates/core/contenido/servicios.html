@@ -1,0 +1,240 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block principal %}
+
+
+<!-- Pricing 3 - Bootstrap Brain Component -->
+<section class="bsb-pricing-3 py-5 py-xl-8">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h3 class="fs-5 mb-2 text-secondary text-center text-uppercase">Nuestros precios</h3>
+                <h2 class="display-5 mb-5 mb-xl-9 text-center">Te ofrecemos suscripciones con diferentes beneficios</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="container-fluid bg-light border pb-4 mt-md-6 shadow">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <div class="card border-0 bg-transparent">
+                                <div class="card-body p-4 p-xxl-5">
+                                    <h2 class="h4 mb-2">Básico</h2>
+                                    <p class="text-secondary m-0">Imprescindible</p>
+                                    <hr class="my-4 border-dark-subtle">
+                                    <h4 class="display-3 fw-bold text-primary m-0">$10.000</h4>
+                                    <p class="text-secondary m-0">CLP / Mes</p>
+                                    <div class="d-grid gap-2 my-4"> 
+                                        <a href="#!" class="btn btn-lg btn-outline-primary">Escoge la suscripción</a>
+                                    </div>
+                                    <ul class="list-group list-group-flush m-0">
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span> Acceso ilimitado a artículos estándar</span>
+                                        </li>
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span> Notificaciones diarias con los titulares más importantes</span>
+                                        </li>
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span> Comentarios y participación en foros de discusión</span>
+                                        </li>
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span> Acceso a un boletín semanal con un resumen de noticias</span>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card bg-white border-0 border-top pt-md-6 shadow-sm bsb-pricing-popular">
+                                <div class="card-body position-relative p-4 p-xxl-5">
+                                    <span
+                                        class="badge text-bg-warning position-absolute top-0 start-50 translate-middle">Most
+                                        Popular</span>
+                                    <h2 class="h4 mb-2">Premium</h2>
+                                    <p class="text-secondary m-0">El más comprado</p>
+                                    <hr class="my-4 border-dark-subtle">
+                                    <h4 class="display-3 fw-bold text-primary m-0">$15.000</h4>
+                                    <p class="text-secondary m-0">CLP / Mes</p>
+                                    <div class="d-grid gap-2 my-4">
+                                        <div style="justify-content: center;" class="text-center" id="paypal-button"></div>
+                                    </div>
+                                    <ul class="list-group list-group-flush m-0">
+                                        <li class="list-group-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span><strong>Todo lo incluido en el paquete Básico</strong></span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span> Acceso exclusivo a artículos de investigación y reportes especiales</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span>Notificaciones en tiempo real para noticias de última hora</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span>Acceso a un boletín diario con análisis y opiniones de expertos</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span>Sin anuncios en la plataforma</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span>Descuentos en eventos y conferencias</span>
+                                        </li>
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="card border-0 bg-transparent">
+                                <div class="card-body p-4 p-xxl-5">
+                                    <h2 class="h4 mb-2">VIP</h2>
+                                    <p class="text-secondary m-0">Prueba gratuita disponible</p>
+                                    <hr class="my-4 border-dark-subtle">
+                                    <h4 class="display-3 fw-bold text-primary m-0">$25.000</h4>
+                                    <p class="text-secondary m-0">CLP / Mes</p>
+                                    <div class="d-grid gap-2 my-4">
+                                        <a href="#!" class="btn btn-lg btn-outline-primary">Escoge la suscripción</a>
+                                    </div>
+                                    <ul class="list-group list-group-flush m-0">
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span><strong>Todo lo incluido en el paquete Premium</strong> </span>
+                                        </li>
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span>Acceso a contenido exclusivo solo para miembros VIP, como entrevistas en profundidad y documentales</span>
+                                        </li>
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span>Acceso anticipado a nuevos productos y servicios del medio</span>
+                                        </li>
+                                        <li class="list-group-item bg-transparent">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                                            </svg>
+                                            <span>Regalo de bienvenida exclusivo</span>
+                                        </li>
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'AcYc4nExVWK_5_CoiXBKs4ST6K1-onT5jqMLq2GC4_1p7uEDIBM0JPvFgLwNdxE-3SBL2dxbSl1mbfy3',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'medium',
+            color: 'blue',
+            shape: 'rect',
+            label: 'paypal',
+            tagline: 'false',
+        },
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+        // Set up a payment
+        payment: function (data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: '10.00',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+        // Execute the payment
+        onAuthorize: function (data, actions) {
+            return actions.payment.execute().then(function () {
+                // Show a confirmation message to the buyer
+                window.alert('Gracias por su compra');
+                window.location.href = 'https://noticia-orpin.vercel.app/voucher/';
+            });
+        }
+    }, '#paypal-button');
+</script>
+
+
+
+{% endblock %}

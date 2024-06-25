@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block principal %}
+<div class="container py-2">
+    <div class="row">
+        <div class="col-lg-11">
+            <h6 class="section-title bg-white text-start text-primary pe-3">Solicitud</h6>
+            <h1 class="mb-4">Noticias</h1>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Título</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Nombre Periodista</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Ver</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aux in lista %}
+                    <tr>
+                        <td>{{ aux.titulo }}</td>
+                        <td>{{ aux.tipo }}</td>
+                        <td>{{ aux.nombre_periodista }}</td>
+                        <td>
+                            {% if aux.estado == 'aprobado' %}
+                            <span class="badge bg-success">Aprobado</span>
+                            {% elif aux.estado == 'pendiente' %}
+                            <span class="badge bg-warning text-dark">Pendiente</span>
+                            {% else %}
+                            <span class="badge bg-danger">Rechazado</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if user.is_staff %}
+                            <a href="{% url 'noticiasupdate' aux.id %}" class="btn btn-primary bi bi-eye" style="border-radius: 30px"></a>
+                            {% else %}
+                            <a href="{% url 'soliupdate' aux.id %}" class="btn btn-primary bi bi-eye" style="border-radius: 30px;"></a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% if user.is_staff %}
+            <a href="{% url 'noticiasadd' %}" class="btn btn-primary py-3 px-5 mt-2">Agregar</a>
+            {% else %}
+            <a href="{% url 'solicsadd' %}" class="btn btn-primary py-3 px-5 mt-2">Agregar</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-lg-12">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-primary px-3">Equipo</h6>
+                <h1 class="mb-5">Nuestros Periodistas</h1>
+            </div>
+            <div class="row g-4">
+                {% for aux in lista2 %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            {% if aux.imagen %}
+                            <img class="img-fluid" src="{{ aux.imagen.url }}" alt="">
+                            {% else %}
+                            <img class="img-fluid" src="{% static 'core/img/peri.webp' %}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">{{ aux.nombre_completo }}</h5>
+                            <small>{{ aux.especialidad }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

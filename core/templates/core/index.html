@@ -1,0 +1,291 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block principal %}
+
+
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5" >
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{% static 'core/img/partes.jpg' %}" alt="" width="100" height="200">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Hace 9 horas</h5>
+                                <h1 class="display-7 text-white animated slideInDown">Parte la restricción vehicular en Santiago: Dígitos y condiciones.</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Este año debuta una excepción para personas, tutores legales o padres de personas TEA.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{% static 'core/img/alcalde.jpeg' %}" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Hace 6 horas</h5>
+                                <h1 class="display-7 text-white animated slideInDown">Decretan orden de arresto contra alcalde de San Bernardo, Christopher White.</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">La medida de apremio fue emitida en contra del jefe comunal por ser el representante legal del municipio, en el marco de una deuda por 108 millones de pesos.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{% static 'core/img/file_20240515081435.jpg' %}" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Hace 23 horas</h5>
+                                <h1 class="display-7 text-white animated slideInDown">Mujer muere tras caída de ascensor en hotel de Las Condes.</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">La víctima fue trasladada hasta la Clínica Los Andes, donde falleció cerca de las 3.30 horas, mientras recibía atención médica.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{% static 'core/img/carabinero.jpg ' %}" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Hace 2 horas</h5>
+                                <h1 class="display-7 text-white animated slideInDown">Yáñez considera "ofensa" el perro "matapacos" y dice que Carabineros es clave para la democracia.</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">La máxima autoridad policial aseguró que "yo no voy a ser una piedra en el zapato para mi institución".</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{% static 'core/img/terminaal.jpg' %}" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Hace 3 horas</h5>
+                                <h1 class="display-7 text-white animated slideInDown">Manifestación en cercanías de terminal de Puente Alto afecta a 20 recorridos de Red Movilidad.</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Cerca de 20 personas protagonizan la protesta y el motivo de ella se vincula con demandas de mejoras habitacional.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+   <!-- Testimonial Start -->
+   <div class="container py-2">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.05s" style="max-width: 600px;">
+            <p class="d-inline-block border rounded-pill py-1 px-4">2024</p>
+            <h1>Días Feriados</h1>
+        </div>
+
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.05s">
+            {% for aux in dias_feriados %}
+            <div class="testimonial-item text-center">
+                <div class="testimonial-text rounded p-2 text-white">
+                    <p>{{ aux.date }}</p>
+                    <p>{{ aux.title }}</p>
+                    <p>{{ aux.extra }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+    <!-- Inicio Tarjetas -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                            <h5 class="mb-3">Cambio de peso argentino a peso chileno hoy</h5>
+                            <p>El dólar oficial está en $860,94 argentinos para la compra y en $916,05 para la venta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5 class="mb-3">¿Cuál es el valor del ingreso mínimo mensual?</h5>
+                            <p>El Ingreso Mínimo Mensual está en: $460.000 para trabajadores mayores de 18 años.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                            <h5 class="mb-3">Chile comienza primera fase de reducción de la jornada laboral</h5>
+                            <p> Este viernes comenzó la ley que reduce gradualmente la jornada laboral de 45 a 40 horas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                            <h5 class="mb-3">Gobierno y economistas se lanzan contra el séptimo retiro de AFP</h5>
+                            <p>La iniciativa permite que los trabajadores retiren un 15% de sus fondos AFP.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Tarjetas -->
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'core/img/monja.avif' %}" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4">El “pacto” entre religiosas que terminó con un cuerpo en una maleta en Ñuñoa</h1>
+                    <p class="mb-4" style="text-align: justify;">La fiscalía y la PDI entregaron detalles del hallazgo de restos humanos en calle Los Talaveras. "Es un caso que no vemos habitualmente”, dijo el fiscal Lanas.</p>
+                    <p class="mb-4">Fiscalía investiga el hallazgo de restos humanos en la comuna de Ñuñoa. El lunes, en calle Los Talaveras, se ubicó una maleta que en su interior tenía una bolsa con un cráneo y otras partes humanas.</p>
+                    <a class="btn btn-primary py-3 px-5 mt-2" style="border-radius: 10px;" href="{% url 'monja' %}">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Categories Start -->
+    <div class="container-xxl py-5 category">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Categorías</h6>
+                <h1 class="mb-5">Noticias por Categorías</h1>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                            <a class="position-relative d-block overflow-hidden" href="{% url 'cultura' %}">
+                                <img class="img-fluid" src="{% static 'core/img/cultura.jpg'%}" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Cultura</h5>
+                                    <small class="text-primary">5 Noticias</small> <!--NÚMERO DE NOTICIAS POR PÁGINA-->
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                            <a class="position-relative d-block overflow-hidden" href="{% url 'deportes' %}">
+                                <img class="img-fluid" src="{% static 'core/img/3.jpg'%}" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                    <h5 class="m-0">Deporte</h5>
+                                    <small class="text-primary">4 Noticias</small> <!--NÚMERO DE NOTICIAS POR PÁGINA-->
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 zoomIn" data-wow-delay="0.5s">
+                            <a class="position-relative d-block overflow-hidden" href="{% url 'internacional' %}">
+                                <img class="img-fluid" src="{% static 'core/img/2.jpg'%}" alt="">
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-4 px-4" style="margin: 1px;">
+                                    <h5 class="m-0">Internacional</h5>
+                                    <small class="text-primary">7 Noticias</small> <!--NÚMERO DE NOTICIAS POR PÁGINA-->
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="{% url 'economia' %}">
+                        <img class="img-fluid  w-100 h-100" src="{% static 'core/img/economia.webp'%}" alt="" style="object-fit: cover;">
+                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
+                            <h5 class="m-0">Economía</h5>
+                            <small class="text-primary">6 Noticias</small> 
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Categories Start -->
+
+<!-- Testimonial Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <p class="d-inline-block border rounded-pill py-1 px-4">Moneda</p>
+            <h1>Indicadores económicos Dolar</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            {% for aux in moneda.serie %}
+            <div class="testimonial-item text-center">
+                <div class="testimonial-text rounded p-4 text-white">
+                    <td>{{ aux.valor }}</td>
+                    <hr>
+                    <td>{{ aux.fecha }}</td>
+                    <hr>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Equipo</h6>
+                <h1 class="mb-5">Nuestros Periodistas</h1>
+            </div>
+            <div class="row g-4">
+                {% for aux in lista %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            {% if  aux.imagen %}
+                            <img class="img-fluid" src="{{ aux.imagen.url }}" alt="">
+                            {% else %}
+                            <img class="img-fluid" src="{% static 'core/img/peri.webp' %}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="text-center p-4">
+                            <br>
+                            <h5 class="mb-0">{{aux.nombre_completo}}</h5>
+                            <small>{{  aux.especialidad }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+
+
+
+
+{% endblock %}

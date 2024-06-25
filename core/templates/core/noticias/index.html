@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block principal %}
+<!-- Hero Section -->
+<section class="hero py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="display-4 mb-4">Noticias</h1>
+                <p class="lead">Aquí puedes encontrar las últimas noticias y realizar acciones como modificar o eliminar.</p>
+                <a href="{% url 'noticiasadd' %}" class="btn btn-primary py-3 px-5">Agregar Noticia</a>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <img class="img-fluid" src="{% static 'core/img/news_logo.png' %}" alt="Noticias">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Noticias List -->
+<section class="noticias-list py-5">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th scope="col" class="text-center">Título</th>
+                        <th scope="col" class="text-center">Categoría</th>
+                        <th scope="col" class="text-center">Nombre Periodista</th>
+                        <th scope="col" class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aux in lista %}
+                    {% if aux.estado == 'aprobado' %}
+                    <tr>
+                        <td class="text-left">{{ aux.titulo }}</td>
+                        <td class="text-center">{{ aux.tipo }}</td>
+                        <td class="text-center">{{ aux.nombre_periodista }}</td>
+                        <td class="text-center d-flex justify-content-center align-items-center">
+                            <a href="{% url 'noticiasupdate' aux.id %}" class="btn btn-primary me-2" style="border-radius: 30px;">Modificar</a>
+                            <button type="button" class="btn btn-danger" onclick="confirmarDelete({{ aux.id }})" style="border-radius: 30px;">Eliminar</button>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- Noticias List End -->
+{% endblock %}

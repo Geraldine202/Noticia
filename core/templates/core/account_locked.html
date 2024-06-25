@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block principal %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Bloqueada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: rgb(44, 7, 7);
+        }
+    </style>
+</head>
+<body>
+    <h1>La cuenta ha sido bloqueada por reiterados intentos fallidos</h1>
+    <br>
+    <h1>Debes esperar 5 minutos para volver a intentar...</h1>
+</body>
+
+{% endblock %}
