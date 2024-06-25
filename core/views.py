@@ -23,7 +23,7 @@ def password_change_form(request):
 #METODOS PARA LISTAR DESDE EL API
 #API
 def periodistasapi (request):
-    response = requests.get('https://noticia-orpin.vercel.app/api/periodistas/') 
+    response = requests.get('https://noticia-black.vercel.app/api/periodistas/') 
     periodistas = response.json() 
 
     paginator = Paginator(periodistas,5)
@@ -37,7 +37,7 @@ def periodistasapi (request):
 
 
 def periodistadetalle(request, id):
-    response = requests.get(f'https://noticia-orpin.vercel.app/api/periodistas/{id}/') 
+    response = requests.get(f'https://noticia-black.vercel.app/api/periodistas/{id}/') 
     periodista = response.json() 
 
     return render (request,'core/crudapi/detalle.html', {'periodista' : periodista})
@@ -62,14 +62,14 @@ class PeriodistaViewset(viewsets.ModelViewSet):
 def index (request):
     periodistas = Periodista.objects.all() # SELECT * FROM empleado
     response = requests.get('https://api.boostr.cl/feriados/en.json') 
-    #response2 = requests.get('https://www.mindicador.cl/api/uf') 
+    response2 = requests.get('https://www.mindicador.cl/api/uf') 
     dias_feriados= response.json() 
-    #plata= response2.json() 
+    plata= response2.json() 
 
     aux = {              
         'lista' : periodistas,
         'dias_feriados': dias_feriados['data'],
-        #'moneda' : plata
+        'moneda' : plata
     }
 
     return render(request, 'core/index.html', aux)
