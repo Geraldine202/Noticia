@@ -98,7 +98,6 @@ def register (request):
         else:
             aux['form'] = formulario
             
-            #aux['msj'] = 'Noticia NO Almacenada'
 
     return render(request, 'registration/register.html',aux)
 
