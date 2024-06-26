@@ -282,8 +282,12 @@ def noticiasdelete(request,id):
 @permission_required('core.view_periodista')
 def periodistas (request):
     periodistas = Periodista.objects.all() # SELECT * FROM empleado
+
+    paginator = Paginator(periodistas,5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)  
     aux = {
-        'lista' : periodistas
+        'page_obj' : page_obj
 
     }
     return render(request, 'core/periodistas/index.html', aux)
