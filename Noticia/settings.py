@@ -197,6 +197,10 @@ AUTHENTICATION_BACKENDS = [
 RECAPTCHA_PUBLIC_KEY = '6Le-XAEqAAAAAK4ZPN_veKuTOuT3-YwWt2W81RMz'
 RECAPTCHA_PRIVATE_KEY = '6Le-XAEqAAAAAGCcTgBHY4drFewhvYwBpXqDRDUs'
 
+PAYPAL_MODE = 'sandbox'  # 'sandbox' para desarrollo, 'live' para producción
+PAYPAL_CLIENT_ID = 'AcYc4nExVWK_5_CoiXBKs4ST6K1-onT5jqMLq2GC4_1p7uEDIBM0JPvFgLwNdxE-3SBL2dxbSl1mbfy3'
+PAYPAL_CLIENT_SECRET = 'EGUjvqSyKfrNkwe8yEfCXWjWft0mpg6CqvQEUPZHJ1jw2Yu8CrSS64hS2ZWZBAxN_1iUeAEI3hR2rVYN'
+
 
 AXES_FAILURE_LIMIT = 3 #Intentos fallidos inicio sesión
 AXES_COOLOFF_TIME = timedelta(minutes=1) #Tiempo de espera antes de otro login

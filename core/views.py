@@ -14,6 +14,8 @@ from django.core.paginator import Paginator
 import paypalrestsdk
 from django.shortcuts import render
 from django.conf import settings
+from reportlab.pdfgen import canvas
+from django.http import HttpResponse
 
 def account_locked(request):
     return render(request, 'core/contenido/account_locked.html')
@@ -158,21 +160,27 @@ def economia (request):
     }
     return render(request, 'core/contenido/economia.html',aux)
 
-#@login_required
-#def servicios (request):
-#    noticias = Noticia.objects.all() # SELECT * FROM empleado
-#    periodistass = Periodista.objects.all()
-#    aux = {
-#        'lista': noticias,
-#        'listafiltrada': periodistass
-#
-#    }
-#    return render(request, 'core/contenido/servicios.html', aux)
+@login_required
+def servicios (request):
+    noticias = Noticia.objects.all() # SELECT * FROM empleado
+    periodistass = Periodista.objects.all()
+    aux = {
+        'lista': noticias,
+        'listafiltrada': periodistass
+
+    }
+    return render(request, 'core/contenido/servicios.html', aux)
 
 
 @login_required
 def contacto (request):
     return render(request, 'core/nav/contacto.html')
+
+
+
+
+
+
 
 @login_required
 def voucher (request):
@@ -340,9 +348,9 @@ def periodistasdelete(request,id):
 
 @login_required
 def servicios(request):
-    precio1 = 5000
-    precio2 = 10000
-    precio3 = 15000
+    precio1 = 2.00
+    precio2 = 5.00
+    precio3 = 7.00
                               
     aux = {
         'precio1' : precio1,
