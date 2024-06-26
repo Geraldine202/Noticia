@@ -48,10 +48,7 @@
                                     <td class="text-center">{{ aux.nombre_completo }}</td>
                                     <td class="text-center">{{ aux.edad }}</td>
                                     <td class="text-center">{{ aux.especialidad.descripcion }}</td>
-                                    <td class="text-center">
-                                        <a href="{% url 'periodistasupdate' aux.id %}" class="btn btn-sm btn-primary me-2">Modificar</a>
-                                        <a href="#" class="btn btn-sm btn-danger" onclick="confirmarDelete({{ aux.id }})">Eliminar</a>
-                                    </td>
+
                                 </tr>
                                 {% endfor %}
                             </tbody>

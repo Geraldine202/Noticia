@@ -38,7 +38,7 @@ function confirmarDelete(id){
           text: "Ha sido eliminado",
           icon: "success"
         }).then(function() {
-          window.location.href = "delete/" + id + "/";
+          window.location.href = "periodistasapi/delete/" + id + "/";
         })
       }
     });
