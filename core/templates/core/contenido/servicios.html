@@ -25,10 +25,10 @@
                                     <h2 class="h4 mb-2">Básico</h2>
                                     <p class="text-secondary m-0">Imprescindible</p>
                                     <hr class="my-4 border-dark-subtle">
-                                    <h4 class="display-3 fw-bold text-primary m-0">$2.00 USD</h4>
-                                    <p class="text-secondary m-0">USD / Mes</p>
+                                    <h4 class="display-3 fw-bold text-primary m-0">$ {{ precio1 }}</h4>
+                                    <p class="text-secondary m-0">CLP / Mes</p>
                                     <div class="d-grid gap-2 my-4"> 
-                                        <a href="#!" class="btn btn-lg btn-outline-primary">Escoge la suscripción</a>
+                                        <div style="justify-content: center;" class="text-center" id="paypal-button"></div>
                                     </div>
                                     <ul class="list-group list-group-flush m-0">
                                         <li class="list-group-item bg-transparent">
@@ -77,10 +77,10 @@
                                     <h2 class="h4 mb-2">Premium</h2>
                                     <p class="text-secondary m-0">El más comprado</p>
                                     <hr class="my-4 border-dark-subtle">
-                                    <h4 class="display-3 fw-bold text-primary m-0">$5.00 USD</h4>
-                                    <p class="text-secondary m-0">USD / Mes</p>
+                                    <h4 class="display-3 fw-bold text-primary m-0">$ {{ precio2 }}</h4>
+                                    <p class="text-secondary m-0">CLP / Mes</p>
                                     <div class="d-grid gap-2 my-4">
-                                        <div style="justify-content: center;" class="text-center" id="paypal-button"></div>
+                                        <div style="justify-content: center;" class="text-center" id="paypal2-button"></div>
                                     </div>
                                     <ul class="list-group list-group-flush m-0">
                                         <li class="list-group-item">
@@ -142,10 +142,10 @@
                                     <h2 class="h4 mb-2">VIP</h2>
                                     <p class="text-secondary m-0">Prueba gratuita disponible</p>
                                     <hr class="my-4 border-dark-subtle">
-                                    <h4 class="display-3 fw-bold text-primary m-0">$10.00 USD</h4>
-                                    <p class="text-secondary m-0">USD / Mes</p>
+                                    <h4 class="display-3 fw-bold text-primary m-0">$ {{ precio3 }}</h4>
+                                    <p class="text-secondary m-0">CLP / Mes</p>
                                     <div class="d-grid gap-2 my-4">
-                                        <a href="#!" class="btn btn-lg btn-outline-primary">Escoge la suscripción</a>
+                                        <div style="justify-content: center;" class="text-center" id="paypal3-button"></div>
                                     </div>
                                     <ul class="list-group list-group-flush m-0">
                                         <li class="list-group-item bg-transparent">
@@ -218,12 +218,13 @@
             return actions.payment.create({
                 transactions: [{
                     amount: {
-                        total: '5.00',
+                        total: '5',
                         currency: 'USD'
                     }
                 }]
             });
         },
+        
         // Execute the payment
         onAuthorize: function (data, actions) {
             return actions.payment.execute().then(function () {
@@ -231,8 +232,102 @@
                 window.alert('Gracias por su compra');
                 window.location.href = 'https://noticia-orpin.vercel.app/voucher/';
             });
-        }
+        },
+     
     }, '#paypal-button');
+            
+</script>
+
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'AcYc4nExVWK_5_CoiXBKs4ST6K1-onT5jqMLq2GC4_1p7uEDIBM0JPvFgLwNdxE-3SBL2dxbSl1mbfy3',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'medium',
+            color: 'blue',
+            shape: 'rect',
+            label: 'paypal',
+            tagline: 'false',
+        },
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+        // Set up a payment
+        payment: function (data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: '10',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+        
+        // Execute the payment
+        onAuthorize: function (data, actions) {
+            return actions.payment.execute().then(function () {
+                // Show a confirmation message to the buyer
+                window.alert('Gracias por su compra');
+                window.location.href = 'https://noticia-orpin.vercel.app/voucher/';
+            });
+        },
+     
+    }, '#paypal2-button');
+        
+</script>
+
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'AcYc4nExVWK_5_CoiXBKs4ST6K1-onT5jqMLq2GC4_1p7uEDIBM0JPvFgLwNdxE-3SBL2dxbSl1mbfy3',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'medium',
+            color: 'blue',
+            shape: 'rect',
+            label: 'paypal',
+            tagline: 'false',
+        },
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+        // Set up a payment
+        payment: function (data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: '15',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+        
+        // Execute the payment
+        onAuthorize: function (data, actions) {
+            return actions.payment.execute().then(function () {
+                // Show a confirmation message to the buyer
+                window.alert('Gracias por su compra');
+                window.location.href = 'https://noticia-orpin.vercel.app/voucher/';
+            });
+        },
+     
+    }, '#paypal3-button');
+        
 </script>
 
 

@@ -3,39 +3,105 @@
 {% block principal %}
 
 
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voucher de Pago</title>
+    <title>Voucher</title>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        /* Estilos CSS para tu voucher */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .voucher {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
+        #voucher-details {
+            display: none;
+            margin-top: 20px;
             border: 1px solid #ccc;
-            background-color: #f9f9f9;
+            padding: 10px;
+            width: 300px;
+            font-family: Arial, sans-serif;
         }
-        /* Otros estilos según sea necesario */
+        #voucher-details h2 {
+            margin-top: 0;
+        }
+        .detail {
+            margin-bottom: 10px;
+        }
+        .paypal-button-container {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="voucher">
-        <!-- Contenido del voucher -->
-        <h2>Voucher de Pago</h2>
-        <p>¡Gracias por tu Suscripción!</p>
-        <p>DETALLE DEL PAGO $ 5.00 USD</p>
-        <p>Aquí está tu voucher imprimible.</p>
+    <h1>Tu Voucher</h1>
+    
+    <h2>Voucher de $10</h2>
+    <div id="paypal1-button-container-10" class="paypal-button-container"></div>
+    
+    <h2>Voucher de $20</h2>
+    <div id="paypal2-button-container-20" class="paypal-button-container"></div>
+    
+    <h2>Voucher de $30</h2>
+    <div id="paypal3-button-container-30" class="paypal-button-container"></div>
+
+    <div id="voucher-details">
+        <h2>Detalles del Voucher</h2>
+        <div class="detail"><strong>ID de la transacción:</strong> <span id="transaction-id"></span></div>
+        <div class="detail"><strong>Nombre del comprador:</strong> <span id="buyer-name"></span></div>
+        <div class="detail"><strong>Email del comprador:</strong> <span id="buyer-email"></span></div>
+        <div class="detail"><strong>Monto:</strong> $<span id="amount"></span></div>
+        <button id="generate-pdf">Generar PDF</button>
     </div>
 
-    <button onclick="window.print()">Imprimir</button>
+    <script>
+        function createPayPalButton(containerId, value) {
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: 'Voucher de compra',
+                            amount: {
+                                value: value  // Valor del voucher
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // Mostrar los detalles de la transacción en el voucher
+                        document.getElementById('transaction-id').innerText = details.id;
+                        document.getElementById('buyer-name').innerText = details.payer.name.given_name + ' ' + details.payer.name.surname;
+                        document.getElementById('buyer-email').innerText = details.payer.email_address;
+                        document.getElementById('amount').innerText = details.purchase_units[0].amount.value;
+                        document.getElementById('voucher-details').style.display = 'block';
+                        alert('Compra completada por ' + details.payer.name.given_name);
+                    });
+                }
+            }).render(containerId);
+        }
+
+        // Crear botones de PayPal con diferentes valores
+        createPayPalButton('#paypal1-button-container-10', '10.00');
+        createPayPalButton('#paypal2-button-container-20', '20.00');
+        createPayPalButton('#paypal3-button-container-30', '30.00');
+
+        // Generar PDF con jsPDF
+        document.getElementById('generate-pdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const transactionId = document.getElementById('transaction-id').innerText;
+            const buyerName = document.getElementById('buyer-name').innerText;
+            const buyerEmail = document.getElementById('buyer-email').innerText;
+            const amount = document.getElementById('amount').innerText;
+
+            doc.text('Detalles del Voucher', 10, 10);
+            doc.text('ID de la transacción: ' + transactionId, 10, 20);
+            doc.text('Nombre del comprador: ' + buyerName, 10, 30);
+            doc.text('Email del comprador: ' + buyerEmail, 10, 40);
+            doc.text('Monto: $' + amount, 10, 50);
+
+            doc.save('voucher.pdf');
+        });
+    </script>
 </body>
 </html>
 

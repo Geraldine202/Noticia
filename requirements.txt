@@ -14,5 +14,5 @@ cloudinary
 whitenoise
 djangorestframework
 django-cloudinary-storage
-
+reportlab
 # pip install -r requirements.txt

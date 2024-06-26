@@ -31,7 +31,7 @@ urlpatterns = [
     path('monja/',monja,name="monja"),
     path('servicios/',servicios,name="servicios"),
     path('voucher/',voucher,name="voucher"),
-
+    path('historial_pago/', historial_pago, name="historial_pago"),
     path('register/',register,name="register"),
     path('solicitud/',solicitud,name="solicitud"),
     path('galeria/',galeria,name="galeria"),

@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Contratos</h6>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">USUARIO</th>
+                        <th scope="col">ID PAGO</th>
+                        <th scope="col">FECHA PAGO</th>
+                        <th scope="col">TOTAL</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">EMAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for aux in lista %}
+                    <tr>
+                        <td>{{ aux.id }}</td>
+                        <td>{{ aux.usuario }}</td>
+                        <td>{{ aux.id_pago }}</td>
+                        <td>{{ aux.fecha|date:"SHORT_DATE_FORMAT" }}</td>
+                        <td>{{ aux.total }}</td>
+                        <td>{{ aux.nombre }}</td>
+                        <td>{{ aux.email }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
