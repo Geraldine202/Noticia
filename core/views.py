@@ -348,9 +348,9 @@ def periodistasdelete(request,id):
 
 @login_required
 def servicios(request):
-    precio1 = 2.00
-    precio2 = 5.00
-    precio3 = 7.00
+    precio1 = 3.000
+    precio2 = 5.000
+    precio3 = 7.000
                               
     aux = {
         'precio1' : precio1,
