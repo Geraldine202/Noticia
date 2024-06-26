@@ -15,4 +15,5 @@ whitenoise
 djangorestframework
 django-cloudinary-storage
 reportlab
+paypalrestsdk
 # pip install -r requirements.txt

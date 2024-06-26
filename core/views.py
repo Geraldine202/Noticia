@@ -11,7 +11,9 @@ from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
 import requests
 from django.core.paginator import Paginator
-
+import paypalrestsdk
+from django.shortcuts import render
+from django.conf import settings
 
 def account_locked(request):
     return render(request, 'core/contenido/account_locked.html')
