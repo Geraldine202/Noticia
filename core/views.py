@@ -14,7 +14,7 @@ from django.core.paginator import Paginator
 
 
 def account_locked(request):
-    return render(request, 'account_locked.html')
+    return render(request, 'core/contenido/account_locked.html')
 
 def password_change_form(request):
     return render(request, 'password_change_form.html')
