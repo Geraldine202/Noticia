@@ -332,7 +332,7 @@ def periodistasdelete(request,id):
     return redirect(to="periodistas")
 
 @permission_required('core.delete_periodista')
-def periodistasapi(request,id):
+def periodistadelete(request,id):
     periodista = Periodista.objects.get(id=id) #buscador
     periodista.delete()
 

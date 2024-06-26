@@ -39,7 +39,7 @@ urlpatterns = [
     #API
     path('api/',include(router.urls)),
     path('periodistasapi/',periodistasapi,name="periodistasapi"),
-    path('periodistasapi/delete/<id>',periodistasapi,name="periodistasapi"),
+    path('periodistasapi/delete/<id>',periodistadelete,name="periodistadelete"),
     path('periodistadetalle/<id>/',periodistadetalle,name="periodistadetalle"),
 
 
