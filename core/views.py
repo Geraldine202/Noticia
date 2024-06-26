@@ -331,6 +331,13 @@ def periodistasdelete(request,id):
 
     return redirect(to="periodistas")
 
+@permission_required('core.delete_periodista')
+def periodistasapi(request,id):
+    periodista = Periodista.objects.get(id=id) #buscador
+    periodista.delete()
+
+    return redirect(to="periodistas")
+
 
 #EMPLEADOS API
 #paginator = Paginator(algo,5) #CANTIDAD DE DATOS A MOSTRAR
